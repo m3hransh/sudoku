@@ -1,0 +1,21 @@
+\section{Analysis}
+In this part we calculate complexity of the code
+that was written in the previous section. In this 
+Analysis we only consider the code related to solving
+the sudoku and we ignore the reading from the file 
+and storing them in matrix. Suppose our puzzle is $N*N$ and
+it has $K$ elements to fill. First thing that we will
+calculate is emptycells, that it takes $O(N*N)$ cause
+we need to visit all the cell to see which one has the value
+of zero. The next part is sudoku function that in the 
+worst case it will run on the all choices so our runtime is
+the recursive form of the following:
+$$
+T(k) = 9T(k-1) + max(O(N),O(k))
+$$
+By a little bit of sloppiness about k the number of
+empty cells and by considering that k is a number betwenn $1\leq K \leq N*N$
+the above recurrence give us the time complexity of
+$O(9^{N*N})$.
+For the space complexity we will need O(N*N) to just store
+the puzzle and other varibales don't exceed this bound.
